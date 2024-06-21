@@ -26,10 +26,10 @@ pipeline {
         
          stage('SonarQube analysis') {
             
-            //def scannerHome = tool 'sonarqube-4.7';
+            //def scannerHome = tool 'sonarqube';
             
             steps {
-                withSonarQubeEnv('sonarqube-server') { 
+                withSonarQubeEnv('sonar-id') { 
                     bat "mvn sonar:sonar"
                 }
             }
